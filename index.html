@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="pt">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Nim Paw Game</title>
+    <link type="text/css" rel="stylesheet" href="estilos/style.css" />
+    <link type="text/css" rel="stylesheet" href="estilos/modal.css" />
+    <link rel="icon" type="image/x-icon" href="imagens/favicon.png">
+    <script src="js/modal.js" defer></script>
+  </head>
+
+  <body>
+    <!-- Header Bar -->
+    <div id="headerBar">
+        <img src="imagens/logo.png" alt="Nin Logo">
+        <div class="btnAuth">Login</div>
+    </div>
+    <div id="container">
+        <!-- Logotipo -->
+        <section id="logo">
+            <img src="imagens/logo1.png" alt="Nin Logo"> <!-- Adiciona aqui um logo-->
+        </section>
+        <!-- Painel de Configuraçao -->
+        <div id="panel-config">
+            <section id="panel-control">
+                <div class="form">
+                    <div>
+                        <p>Quem é o oponente?</p>
+                        <input type="radio" id="human" name="whoIsTheOtherPlayer" value="human">
+                        <label for="human">Humano</label><br>
+                        <input type="radio" id="computer" name="whoIsTheOtherPlayer" value="computer" checked>
+                        <label for="computer">Computador</label>
+                    </div>
+                    <div>
+                        <p>Quem joga primeiro?</p>
+                        <input type="radio" id="me" name="whoPlayFirst" value="Me" checked/>
+                        <label for="me">Eu</label><br>
+                        <input type="radio" id="Oponnent" name="whoPlayFirst" value="Oponnent">
+                        <label for="Oponnent">Oponente</label>
+                    </div>
+                    <fieldset class="form-group">
+                        <label for="btLevel">Tabuleiro:</label>
+                        <select class="boardType">
+                            <option selected value="0">Escolha um formato...</option>
+                            <option value="4">4 colunas</option>
+                            <option value="5">5 colunas</option>
+                            <option value="6">6 colunas</option>
+                        </select>
+                    </fieldset>
+                    <fieldset class="form-group">
+                        <label for="btLevel">Dificuldade:</label>
+                        <select class="aiLevel">
+                            <option value="0">Escolha um modo...</option>
+                            <option value="1">Basico</option>
+                            <option value="2">Medio</option>
+                            <option value="3">Dificil</option>
+                        </select>
+                    </fieldset>
+                </div>
+            </section>
+        </div>
+        <!-- Painel de Comandos -->
+        <section id="panel-control">
+            <div class="form-metadata">
+                <button class="btnHelp">Instruções</button>
+                <button class="btnStartEnd">Desistir</button>
+                <button class="btnScore">Classificações</button>
+            </div>
+        </section>
+        <!-- Painel de jogo  -->
+        <section class="game">
+            <div class="myBoard"></div>
+        </section>
+        <!-- Footer -->
+        <footer>
+            <br/>
+            <br/>
+            <p>Feito por: Sérgio Costa</p>
+        </footer>
+    </div>
+
+    <!--Modal-->
+    <div id="prompt-form-container">
+        <form id="prompt-form">
+            <h1>Login</h1>
+            <div>Introduza os dados para efetuar login</div>
+            <input type="text" name="text" class="txtUsername" placeholder="username">
+            <input type="password" name="password" class="txtPassword" placeholder="password">
+            <input type="button" name="button" class="btnSubmitLogin" value="Confirmar">
+            <input type="button" name="button" class="btnCancel" value="Sair">
+        </form>
+    </div>
+    
+    <div id="modal-help-container">
+        <form id="modal-help">
+            <h1>Instruções</h1>
+            <div>As jogadas são feitas alternadamente, e cada jogador deve retirar <br>
+                uma quantidade de caes de uma das coluna. <br>
+                O vencedor é aquele que retirar o último cão da mesa.</div>
+            <div class="board">
+                <div class="pilhaDemo">
+                        <div class="vazioDemo"></div>
+                        <div class="vazioDemo"></div>
+                        <div class="vazioDemo"></div>
+                        <div class="pecaDemo"></div>
+                </div>
+                <div class="pilhaDemo">
+                        <div class="vazioDemo"></div>
+                        <div class="vazioDemo"></div>
+                        <div class="pecaDemo"></div>
+                        <div class="pecaDemo"></div>
+                </div>
+                <div class="pilhaDemo">
+                        <div class="vazioDemo"></div>
+                        <div class="pecaDemo"></div>
+                        <div class="pecaDemo"></div>
+                        <div class="pecaDemo"></div>
+                </div>
+                <div class="pilhaDemo">
+                        <div class="pecaDemo"></div>
+                        <div class="pecaDemo"></div>
+                        <div class="pecaDemo"></div>
+                        <div class="pecaDemo"></div>
+                </div>
+            </div>
+            <input type="button" name="button" class="btnCancelHelp" value="Sair">
+        </form>
+    </div>
+    
+    <div id="modal-score-container">
+        <form id="modal-score">
+            <h1>Classificações</h1>
+                <table class="myTable">
+                    
+                </table>
+            <input type="button" name="button" class="btnCancelScore" value="Sair">
+        </form>
+    </div>
+
+
+
+  </body>
+</html>

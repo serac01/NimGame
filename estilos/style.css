@@ -1,0 +1,221 @@
+/**********************************/
+/***  Style CSS - Jogo do Nin   ***/
+/*** Feito por: Catarina Santos ***/
+/**********************************/
+
+/*Defenir as cores e estilo aqui, apenas uma vez para facilitar a alteração*/
+:root{
+    --globalColor: #d42a2a;
+    --borderColor: #9c2121;
+    --hoverButtonColor: #9c2121;
+    --modalGlobalColor: #9c2121;
+    --modalBorderColor: #6b1616;
+    --whiteColor: #f1f0f0;
+    --headerBarColor: #000000;
+    --boxshadow: 0px 0px 15px rgba(0, 0, 0, 0.8);
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    /*background: url('../imagens/back.jpg');*/
+    /*Podes usar este fundo tambem, uma imagem mais pequena e fazes uma especie de grid*/
+    background: url('../imagens/backy.png');
+    font-family: "Clear Sans", "Helvetica Neue", Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    padding-top: 50px;
+}
+
+h1{
+    padding-bottom: 15px;
+}
+
+/*Aqui começa o codigo para alerar os componentes defenidos no html por mim*/
+/*Inicio da header bar*/
+#headerBar {
+    margin: 0;
+    padding: 0;
+    top: 0;
+    width: 100%;
+    position: fixed;
+    overflow: hidden;
+    background-color: var(--headerBarColor);
+    display: flex;
+    border-bottom: 3px solid var(--borderColor);
+    
+}
+
+#headerBar img{
+    float: left;
+    width: 10%;
+    padding: 15px;
+}
+
+#headerBar .btnAuth{
+    align-self: stretch;
+    margin-left: auto;
+    margin-top: 10px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    display: flex;
+    padding: 15px;
+    border: 3px solid black;
+    color: white;
+    text-align: center;
+    font-weight: bold;
+}
+
+#headerBar .btnAuth:hover{
+    background-color: var(--hoverButtonColor);
+    border: 3px solid var(--borderColor);
+}
+/*Fim do header*/
+
+#container {
+    display: flex;
+    flex-direction: column;
+    margin: 20px 0 10px 0;
+    padding: 25px 20px 10px 20px;
+    background-color: transparent;
+    color: gray;
+    align-items: center;
+    width: 700px;
+    min-width: 450px;
+    border-radius: 10px;
+    align-items: center;
+}
+
+/*Inicio do logo*/
+#logo{
+    width: 100%;
+    margin: 15px 0px;
+    background-color: var(--headerBarColor);
+    box-shadow: var(--boxshadow);
+    border: 3px solid var(--borderColor);
+    border-radius: 10px;
+}
+
+#logo img{
+    max-width: 60%;
+    padding: 10px;
+    height: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+/*Fim do logo*/
+
+/*Inicio do painel de configuração*/
+#panel-control {
+    background-color: var(--whiteColor);
+    box-shadow: var(--boxshadow);
+    border-radius: 10px;
+    font-size: small;
+    font-weight: bold;    
+    width: 100%;
+    margin: 15px 0px;
+    border: 3px solid var(--borderColor);
+}
+
+#panel-control .form{
+    width: 100%;
+    padding: 10px 20px;   
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 5px;
+}
+
+#panel-control .form-group {
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+/*Fim do painel de configuração*/
+
+/*Inicio do painel de comandos*/
+#panel-control .form-metadata {
+    width: 100%;
+    padding: 10px 20px;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    justify-self: center;
+    grid-gap: 5px;
+}
+
+#panel-control .form-metadata button{
+    width: 70%;
+    padding: 10px 20px;
+    display: grid;
+    justify-self: center;
+    border: 2px solid var(--borderColor);
+    background-color: var(--globalColor);
+    border-radius: 10px;
+    color: white;
+    cursor: pointer;
+}
+  
+#panel-control .form-metadata button:hover{
+    background: var(--hoverButtonColor);
+    border: 2px solid var(--borderColor);
+}
+/*Fim do painel de comandos*/
+
+/*Inicio do painel de jogo*/
+.game {
+    width: 100%;
+    margin: 0 auto;
+    padding: 10px 0px;
+    gap: 10px;
+    background-color: var(--whiteColor);
+    box-shadow: var(--boxshadow);
+    border-radius: 10px;
+    font-size: small;
+    font-weight: bold;
+    border: 3px solid var(--borderColor);
+    height: 100%;
+    border-spacing: 10px;
+    text-align: center;
+}
+
+.game .myBoard {
+    display: table;
+    width: 100%;
+    text-align: center;
+}
+/*Fim do painel de jogo*/
+
+/*Footer*/
+footer {
+    font-size: x-small;
+    font-weight: bold;
+}
+
+.board{
+    width: 100%; 
+    margin: auto;
+}
+
+.pilha, .pilhaDemo {
+    display: inline-block;
+    margin: 20px;
+    border: 2px dotted black;
+    border-radius: 10px;
+}
+
+.peca, .pecaDemo, .vazio, .vazioDemo {
+    width: 50px;
+    height: 50px;
+    margin: 5px;
+}
+
+.peca, .pecaDemo {
+    background: url('../imagens/favicon.png');
+    background-size: 100% 100%;
+}
